@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-black">
+    <div id="crystals" class="absolute w-[480px] h-full bg-transparent">
+        <div id="crystal1" class="absolute w-full h-full bg-[url('http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_01.png')]"></div>
+        <div id="crystal2" class="absolute w-full h-full bg-[url('http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_02.png')]"></div>
+        <div id="crystal3" class="absolute w-full ml-[-100px] h-full bg-[url('http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_03.png')]"></div>
+    </div>
+    <script>
+        $(function(){
+            var posY1 = 0;
+            var posY2 = 0;
+            var posY3 = 0;
+            setInterval(function(){
+                if(posY1 <= -900) posY1 = 0;
+                if(posY2 <= -900) posY2 = 0;
+                if(posY3 <= -900) posY3 = 0;
+                posY1 -= 1;
+                posY2 -= 2;
+                posY3 -= 3;
+                $("#crystal1").css({
+                    backgroundPosition: "0" + posY1 + "px"
+                })
+                $("#crystal2").css({
+                    backgroundPosition: "0" + posY2 + "px"
+                })
+                $("#crystal3").css({
+                    backgroundPosition: "0" + posY3 + "px"
+                })
+            }, 50);
+        })
+    </script>
+</body>
+</html>
